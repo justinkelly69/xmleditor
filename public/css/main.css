@@ -1,0 +1,126 @@
+:root {
+    box-sizing: border-box;
+    font-size: calc(1vw + 0.6em);
+}
+
+@media (min-width: 50em) {
+    :root {
+        font-size: 1.125em;
+    }
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    font-family: Helvetica, Arial, sans-serif;
+    background-color: white
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+/*
+ * Header section
+ */
+.page-header {
+    padding: 0.4em 1em;
+    background-color: #fff;
+}
+
+@media (min-width: 35em) {
+    .page-header {
+        padding: 1em;
+    }
+}
+
+@media (min-width: 50em) {
+    .page-header {
+        padding: 1em 4em;
+    }
+}
+
+.title>h1 {
+    color: #333;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    margin: .2em 0;
+}
+
+@media (min-width: 35em) {
+    .title>h1 {
+        font-size: 2.25rem;
+    }
+}
+
+/*
+ * Main section
+ */
+main {
+    padding: 0;
+}
+
+@media (min-width: 35em) {
+    main {
+        padding: 0;
+    }
+}
+
+@media (min-width: 50em) {
+    main {
+        padding: 0;
+    }
+}
+
+/**
+ * Main columns
+ */
+
+.row {
+    
+}
+
+.top-row {
+    height: 1.2em;
+    background-color: gainsboro;
+}
+
+.path-row {
+    height: 1em;
+    width: 100%;
+    padding: 0;
+    padding-top: .2em;
+}
+
+.main-row {
+    height: 90%;
+    min-height: 400px;
+    max-height: 1000px;
+}
+
+.column {
+    padding: 0;
+    background-color: #fff;
+    overflow-x: scroll;
+    overflow-y: scroll;
+
+}
+
+@media (min-width: 35em) {
+    .row {
+        display: flex;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .column {
+        flex: 1;
+        margin-right: 0;
+        margin-left: 0;
+    }
+}
