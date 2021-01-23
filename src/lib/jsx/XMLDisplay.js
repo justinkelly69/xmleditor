@@ -6,11 +6,6 @@ const XMLDisplay = props => {
     const [newNS, setNewNS] = useState("")
     const [newName, setNewName] = useState("")
 
-    //console.clear()
-    // console.log('props.selectedNodes',JSON.stringify(props.selectedNodes, null, 4))
-    // console.log('props.prefix', JSON.stringify(props.prefix, null, 4))
-    // console.log('props.path', JSON.stringify(props.path, null, 4))
-
     let spacing = 0
     return (
         <>

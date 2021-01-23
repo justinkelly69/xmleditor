@@ -1,6 +1,7 @@
 import React from 'react'
 import { PrefixButton, Symbols, Panels } from '.'
-import * as SNAC from '../snac/snac'
+//import * as SNAC from '../snac/snac'
+import SNAC from '../snac'
 
 const Prefix = props =>
     <>

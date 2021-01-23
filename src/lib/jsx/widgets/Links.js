@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { Colors, ButtonStyles, PanelButtonsRight } from '..'
 
 const Link = styled.a `
     color: green;

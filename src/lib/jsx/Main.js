@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import {
     DocumentElement, XMLDisplay, NodeEditor, TextEditor, CDATAEditor, CommentEditor,
     PIEditor,
-    NodeHeader, TextHeader, CDATAHeader, CommentHeader, PIHeader,
     Path, Editors, DropDownList, Sections
 } from '.'
 import allXml from '../../data/allxml'
@@ -21,6 +20,7 @@ class Main extends Component {
             prefix: [],
             selectedPaths: [],
             selectedNodes: [],
+            clipboard: [],
             writeable: true,
             page: 'waffle',
         }
@@ -208,7 +208,7 @@ class Main extends Component {
     }
 
     pasteEnable() {
-        return SNAC.pasteEnable(this.state.clipboard)
+        return this.state.clipboard && this.state.clipboard.length > 0
     }
 
     wrapNodes(newNS, newName) {

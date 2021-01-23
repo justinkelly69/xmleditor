@@ -1,6 +1,6 @@
 import React from 'react'
 import { Attribute, OpenTagEnd, Panels } from '.'
-import * as SNAC from '../snac/snac'
+import SNAC from '../snac'
 
 const Attributes = (props) => {
 

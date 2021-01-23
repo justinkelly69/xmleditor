@@ -1,10 +1,8 @@
 import React from 'react'
 import { NodeElement, TextElement, CDATAElement, CommentElement, PIElement } from '..'
-import * as SNAC from '../../snac/snac'
+import SNAC from '../../snac'
 
 const ChildElement = props => {
-
-    
 
     const Child = {
         'N': NodeElement,

@@ -1,6 +1,6 @@
 import React from 'react'
 import { ChildElement } from '..'
-import * as SNAC from '../../snac/snac'
+import SNAC from '../../snac'
 
 const ChildElements = props => {
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import { EditAttribute, Panels } from '..'
-import * as SNAC from '../../snac/snac'
+import SNAC from '../../snac'
 
 const EditAttributes = props => {
     let onOff = true;

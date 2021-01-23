@@ -1,6 +1,5 @@
 import React from 'react'
-import { Buttons, Labels, Brackets, Panels, Fields } from '..'
-import { Symbols } from '../helpers/constants'
+import { Buttons, Labels, Brackets, Panels, Fields, Symbols } from '..'
 
 const CommentHeader = props =>
 

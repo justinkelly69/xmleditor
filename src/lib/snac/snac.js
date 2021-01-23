@@ -521,10 +521,6 @@ export const pasteNodes = (root, data, atts, clipboard) => {
     }
 }
 
-export const pasteEnable = clipboard => {
-    return clipboard && clipboard.length > 0
-}
-
 export const wrapNodes = (newNS, newName, root, selectedPaths, selectedNodes) => {
     let [remove, replace, wrapper, newPath, newPaths, path] = [[], [], null, null, null, null]
 

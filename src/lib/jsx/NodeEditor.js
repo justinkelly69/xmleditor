@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import * as SNAC from '../snac/snac'
+//import * as SNAC from '../snac/snac'
+import SNAC from '../snac'
 import { EditAttributes, NewAttribute, NodeHeader, Panels } from '.'
 
 export const NodeEditor = props => {

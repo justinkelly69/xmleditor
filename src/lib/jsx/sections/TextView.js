@@ -1,5 +1,6 @@
 import React from 'react'
-import * as SNAC from '../../snac/snac'
+//import * as SNAC from '../../snac/snac'
+import SNAC from '../../snac'
 import { Editors, Fields, Sizes, Symbols, TextViews } from '..'
 
 const TextView = (props) =>
