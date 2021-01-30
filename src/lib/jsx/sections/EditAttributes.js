@@ -1,6 +1,6 @@
 import React from 'react'
 import { EditAttribute, Panels } from '..'
-import SNAC from '../../snac'
+import * as SNAC from '../../snac'
 
 const EditAttributes = props => {
     let onOff = true;
@@ -23,7 +23,7 @@ const EditAttributes = props => {
                             value={props.atts[ns][a]['value']}
                             isDeleted={props.atts[ns][a]['deleted']}
                             newAttr={props.newAttr}
-                            toggleOpenClose={props.toggleOpenClose}
+                            attributesOpenClose={props.attributesOpenClose}
                             updateAttributeValue={props.updateAttributeValue}
                             markAttributeDeleted={props.markAttributeDeleted}
                             ns={ns}

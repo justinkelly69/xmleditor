@@ -1,7 +1,6 @@
 import React from 'react'
 import { NSNameLabels, Sizes, Fields, Brackets, PILang, Panels } from '.'
-//import * as SNAC from '../snac/snac'
-import SNAC from '../snac'
+import * as SNAC from '../snac'
 import { Symbols } from './helpers/constants'
 
 const Path = props => {

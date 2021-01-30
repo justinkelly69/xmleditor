@@ -1,6 +1,6 @@
 import React from 'react'
 import { Brackets, Fields } from '..'
-import SNAC from '../../snac'
+import * as SNAC from '../../snac'
 
 const AttributeNSName = props =>
     <>

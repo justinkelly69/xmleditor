@@ -1,5 +1,5 @@
 import React from 'react'
-import SNAC from '../../snac'
+import * as SNAC from '../../snac'
 import { Editors, Fields, Sizes, Symbols, TextViews, Prefix, Panels } from '..'
 
 const CDATAView = (props) =>

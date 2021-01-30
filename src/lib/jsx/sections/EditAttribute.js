@@ -1,12 +1,12 @@
 import React from 'react'
 import { Buttons, Fields, Labels, TextInputs, Panels } from '..'
-import SNAC from '../../snac'
+import * as SNAC from '../../snac'
 
 const EditAttribute = (props) =>
     <>
         <Panels.EditAttributeItem oddEven={props.oddEven}>
             <Fields.AttributeNS onClick={() => !props.isDeleted ?
-                props.toggleOpenClose(props.atts, props.ns, props.name) :
+                props.attributesOpenClose(props.atts, props.ns, props.name) :
                 props.closeAll(props.atts)
             }
                 isDeleted={props.isDeleted}>
@@ -16,7 +16,7 @@ const EditAttribute = (props) =>
 
         <Panels.EditAttributeItem oddEven={props.oddEven}>
             <Fields.AttributeName onClick={() => !props.isDeleted ?
-                props.toggleOpenClose(props.atts, props.ns, props.name) :
+                props.attributesOpenClose(props.atts, props.ns, props.name) :
                 props.closeAll(props.atts)
             }
                 isDeleted={props.isDeleted}>
@@ -30,14 +30,14 @@ const EditAttribute = (props) =>
                 <TextInputs.AttValueInput onChange={(event) => props.updateAttributeValue(
                     props.atts, props.ns, props.name, event.target.value)}
                     onDoubleClick={() => !props.isDeleted ?
-                        props.toggleOpenClose(props.atts, props.ns, props.name) :
+                        props.attributesOpenClose(props.atts, props.ns, props.name) :
                         props.closeAll(props.atts)
                     }
                     onFocus={(event) => event.target.select()}
                     value={props.value} /> :
 
                 <Fields.AttributeValue onClick={() => !props.isDeleted ?
-                    props.toggleOpenClose(props.atts, props.ns, props.name) :
+                    props.attributesOpenClose(props.atts, props.ns, props.name) :
                     props.closeAll(props.atts)
                 }
                     isDeleted={props.isDeleted}>

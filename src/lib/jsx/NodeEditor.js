@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-//import * as SNAC from '../snac/snac'
-import SNAC from '../snac'
+import * as SNAC from '../snac'
 import { EditAttributes, NewAttribute, NodeHeader, Panels } from '.'
 
 export const NodeEditor = props => {
@@ -15,8 +14,8 @@ export const NodeEditor = props => {
 
 
     // Open/Close attribute text fields.
-    const toggleOpenClose = (atts, idx1, idx2) => {
-        setAtts(SNAC.toggleOpenClose(atts, idx1, idx2))
+    const attributesOpenClose = (atts, idx1, idx2) => {
+        setAtts(SNAC.attributesOpenClose(atts, idx1, idx2))
     }
     const closeAll = atts => setAtts(SNAC.allClose(atts))
 
@@ -79,7 +78,7 @@ export const NodeEditor = props => {
                     newAttr={newAttr}
                     data={props.data}
                     isOpen={SNAC.attsOpen(atts)}
-                    toggleOpenClose={toggleOpenClose}
+                    attributesOpenClose={attributesOpenClose}
                     saveNode={props.saveNode}
                     closeAll={closeAll}
                     updateAttributeValue={updateAttributeValue}

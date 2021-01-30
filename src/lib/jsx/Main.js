@@ -5,7 +5,7 @@ import {
     Path, Editors, DropDownList, Sections
 } from '.'
 import allXml from '../../data/allxml'
-import SNAC from '../snac'
+import * as SNAC from '../snac'
 
 class Main extends Component {
     constructor(props) {
