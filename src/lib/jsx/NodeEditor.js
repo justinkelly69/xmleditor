@@ -17,7 +17,7 @@ export const NodeEditor = props => {
     const attributesOpenClose = (atts, idx1, idx2) => {
         setAtts(SNAC.attributesOpenClose(atts, idx1, idx2))
     }
-    const closeAll = atts => setAtts(SNAC.allClose(atts))
+    const closeAll = atts => setAtts(SNAC.attsClose(atts))
 
     // Update the value from the text fields.
     const updateAttributeValue = (atts, idx1, idx2, value) =>

@@ -1,29 +1,10 @@
-import {
-    newElement, newText, newCDATA, newComment, newPI, newIPoint,
-    clone, cloneElement, cloneAttributes, cloneChildren, cloneText,
-    cloneCDATA, cloneComment, clonePI
-} from './clone'
-
-import {
-    itemType, has, escapeXML, unEscapeXML, escapeCDATA, escapeComment, escapePI,
-    normalize, getNamespaces, getNames, hasAttributes, getNS
-} from './helpers'
-
-import {
-    find, findTag, findTags, findIDs, findID, findPrevID, findNextID, findParentID
-} from './find'
-
-import {
-    pathParent, pathDecrement, pathIncrement, firstPath, lastPath, lastChildIndex,
-    parentLastChildIndex, currPathItem, prevPathItem, nextPathItem
-} from './path'
-
-import { setSelected, clearSelected, clearAll, getOuterElements } from './selector'
-import { NSNameTest, attNSNameTest, piLangTest, attNS, attName } from './regex'
-import {
-    insertNode, updateText, insertComment, updateComment,
-    insertCDATA, updateCDATA, insertPI, updatePI, concatTextNodes
-} from './texts'
+import { newElement, newText, clone, cloneChildren } from './clone'
+import { itemType, unEscapeXML } from './helpers'
+import { find, findIDs } from './find'
+import { pathIncrement, firstPath, lastPath } from './path'
+import { NSNameTest } from './regex'
+import { getOuterElements } from './selector'
+import { concatTextNodes } from './texts'
 
 const removeNodes = (root, selectedPaths) => {
     const { prevItem, firstItem, lastItem, nextItem } = getOuterElements(root, selectedPaths)

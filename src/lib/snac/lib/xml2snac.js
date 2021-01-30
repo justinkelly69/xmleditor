@@ -1,12 +1,6 @@
 import { DOMParser } from 'xmldom'
 import { v4 } from 'uuid'
-
-import {
-    newElement, newText, newCDATA, newComment, newPI, newIPoint,
-    clone, cloneElement, cloneAttributes, cloneChildren, cloneText, 
-    cloneCDATA, cloneComment, clonePI
-} from './clone'
-
+import { newText, newCDATA, newComment, newPI } from './clone'
 
 export const xml2snac = xml => ({
     _: 'N',

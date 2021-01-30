@@ -77,7 +77,7 @@ export const saveAttributes = (atts) => {
     return removeEmptyObjects(newAtts)
 }
 
-export const allClose = atts => {
+export const attsClose = atts => {
     const newAtts = {}
     Object.keys(atts).map(a => {
         newAtts[a] = {}
@@ -130,8 +130,6 @@ export const attributesOpenClose = (atts, ns, name) =>
         name,
         a => ({ ...a, open: !a.open }),
         a => ({ ...a, open: false }))
-
-
 
 export const updateAttributeValue = (atts, ns, name, value) =>
     updateAttributes(
