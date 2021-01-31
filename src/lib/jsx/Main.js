@@ -124,15 +124,7 @@ class Main extends Component {
                         break
 
                     default:
-                        console.log('default:')
-                        this.setState(() => ({
-                            editor: 'Z',
-                            prefix: '',
-                            path: '',
-                            selectedPaths: [],
-                            selectedNodes: []
-                        }))
-
+                        this.clearEditor()
                 }
             }
         }
@@ -141,7 +133,11 @@ class Main extends Component {
     clearEditor() {
         this.setState({
             data: {},
-            editor: 'Z'
+            editor: 'Z',
+            prefix: '',
+            path: '',
+            selectedPaths: [],
+            selectedNodes: []
         })
     }
 

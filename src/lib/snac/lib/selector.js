@@ -18,14 +18,14 @@ export const setSelected = (root, _selectedPaths = [], path) => {
     })
 
     return ({
-        root: clone(root, { toggle: ids, newID: true }),
+        root: clone(root, { toggleSelected: ids, newID: true }),
         selectedPaths,
         selectedNodes
     })
 }
 
 export const clearSelected = root => ({
-    root: clone(root, { clear: true, newID: false }),
+    root: clone(root, { clearSelected: true, newID: false }),
     selectedPaths: [],
     selectedNodes: []
 })

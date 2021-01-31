@@ -140,7 +140,7 @@ export const wrapNodes = (newNS, newName, root, selectedPaths, selectedNodes) =>
         })
 
         replace = [wrapper]
-        wrapper = clone(wrapper, { toggle: [wrapper._], newID: false })
+        wrapper = clone(wrapper, { toggleSelected: [wrapper._], newID: false })
 
         newPath = [...selectedPaths[0]]
         newPaths = [newPath]

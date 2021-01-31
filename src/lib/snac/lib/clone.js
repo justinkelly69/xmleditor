@@ -4,13 +4,14 @@ import { itemType, has } from './helpers'
 export const newElement = (snac) => {
     const A = has(snac, 'A', {})
     const C = has(snac, 'C', [])
-    const q = has(snac, 'q', false)
     return cloneElement({
         S: snac.S === '@' ? '' : snac.S,
         N: snac.N,
         A: cloneAttributes(A),
         C: cloneChildren(C, { newID: true }),
-        q: q
+        a: true,
+        o: true,
+        q: false
     }, { newID: true })
 }
 
@@ -55,8 +56,8 @@ export const clone = (snac, settings = {}, newID = false) => {
 }
 
 export const cloneElement = (snac, settings = {}) => {
-    const toggle = has(settings, 'toggle', [])
-    const clear = has(settings, 'clear', false)
+    const toggleSelected = has(settings, 'toggleSelected', [])
+    const clearSelected = has(settings, 'clearSelected', false)
     const newID = has(settings, 'newID', false)
     return ({
         _: newID ? `N${v4()}` : snac._,
@@ -64,7 +65,9 @@ export const cloneElement = (snac, settings = {}) => {
         N: snac.N,
         A: cloneAttributes(snac.A),
         C: cloneChildren(snac.C, settings, newID),
-        q: clear ? false : toggle.includes(snac._)
+        a: has(snac, 'a', true),
+        o: has(snac, 'o', true),
+        q: clearSelected ? false : toggleSelected.includes(snac._)
     })
 }
 
@@ -100,46 +103,46 @@ export const cloneChildren = (kids = [], settings = {}) => {
 }
 
 export const cloneText = (snac, settings = {}) => {
-    const toggle = has(settings, 'toggle', [])
-    const clear = has(settings, 'clear', false)
+    const toggleSelected = has(settings, 'toggleSelected', [])
+    const clearSelected = has(settings, 'clearSelected', false)
     const newID = has(settings, 'newID', false)
     return ({
         _: newID ? `T${v4()}` : snac._,
         T: snac.T,
-        q: clear ? false : toggle.includes(snac._)
+        q: clearSelected ? false : toggleSelected.includes(snac._)
     })
 }
 
 export const cloneCDATA = (snac, settings = {}) => {
-    const toggle = has(settings, 'toggle', [])
-    const clear = has(settings, 'clear', false)
+    const toggleSelected = has(settings, 'toggleSelected', [])
+    const clearSelected = has(settings, 'clearSelected', false)
     const newID = has(settings, 'newID', false)
     return ({
         _: newID ? `D${v4()}` : snac._,
         D: snac.D,
-        q: clear ? false : toggle.includes(snac._)
+        q: clearSelected ? false : toggleSelected.includes(snac._)
     })
 }
 
 export const cloneComment = (snac, settings = {}) => {
-    const toggle = has(settings, 'toggle', [])
-    const clear = has(settings, 'clear', false)
+    const toggleSelected = has(settings, 'toggleSelected', [])
+    const clearSelected = has(settings, 'clearSelected', false)
     const newID = has(settings, 'newID', false)
     return ({
         _: newID ? `M${v4()}` : snac._,
         M: snac.M,
-        q: clear ? false : toggle.includes(snac._)
+        q: clearSelected ? false : toggleSelected.includes(snac._)
     })
 }
 
 export const clonePI = (snac, settings = {}) => {
-    const toggle = has(settings, 'toggle', [])
-    const clear = has(settings, 'clear', false)
+    const toggleSelected = has(settings, 'toggleSelected', [])
+    const clearSelected = has(settings, 'clearSelected', false)
     const newID = has(settings, 'newID', false)
     return ({
         _: newID ? `P${v4()}` : snac._,
         L: snac.L,
         B: snac.B,
-        q: clear ? false : toggle.includes(snac._)
+        q: clearSelected ? false : toggleSelected.includes(snac._)
     })
 }
