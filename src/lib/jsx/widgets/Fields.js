@@ -76,6 +76,7 @@ export const CDATALabel = styled.span`
 export const CDATABody = styled.span`
     color: ${Colors.CDATABodyColor};
     font-weight: bold;
+    white-space: pre-wrap;
 `
 export const CDATAToggle = styled.span`
     color: ${Colors.CDATAToggleColor};
@@ -88,6 +89,7 @@ export const CommentHeading = styled.span`
 export const CommentBody = styled.span`
     color: ${Colors.CommentBodyColor};
     font-weight: bold;
+    white-space: pre-wrap;
 `
 export const CommentToggle = styled.span`
     color: ${Colors.CommentToggleColor};
@@ -104,6 +106,7 @@ export const PILang = styled.span`
 export const PIBody = styled.span`
     color: ${Colors.PIBodyColor};
     font-weight: bold;
+    white-space: pre-line;
 `
 export const PIToggle = styled.span`
     color: ${Colors.PIToggleColor};
@@ -112,6 +115,7 @@ export const PIToggle = styled.span`
 export const TextBody = styled.span`
     color: ${Colors.TextColor};
     font-weight: normal;
+    white-space: pre-wrap;
 `
 export const TextToggle = styled.span`
     color: ${Colors.TextToggleColor};
