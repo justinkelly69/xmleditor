@@ -146,8 +146,8 @@ class Main extends Component {
             page: event.target.value,
             editor: 'Z'
         }, () => {
-            this.setState({ 
-                root: SNAC.xml2snac(allXml[this.state.page]) 
+            this.setState({
+                root: SNAC.xml2snac(allXml[this.state.page])
             })
         })
     }
@@ -187,7 +187,8 @@ class Main extends Component {
     }
 
     copyNodes() {
-        const { clipboard, selectedNodes, selectedPaths } = SNAC.copyNodes(this.state.selectedNodes)
+        const { clipboard, selectedNodes, selectedPaths } =
+            SNAC.copyNodes(this.state.selectedNodes)
         this.setState({ clipboard, selectedNodes, selectedPaths })
     }
 
@@ -199,7 +200,8 @@ class Main extends Component {
     }
 
     pasteNodes(data, atts) {
-        const { remove, replace } = SNAC.pasteNodes(this.state.root, data, atts, this.state.clipboard)
+        const { remove, replace } =
+            SNAC.pasteNodes(this.state.root, data, atts, this.state.clipboard)
         this.save(remove, replace)
     }
 
@@ -208,15 +210,15 @@ class Main extends Component {
     }
 
     wrapNodes(newNS, newName) {
-        const { remove, replace, selectedPaths, selectedNodes, path } = SNAC.wrapNodes(
-            newNS,
-            newName,
-            this.state.root,
-            this.state.selectedPaths,
-            this.state.selectedNodes)
-
+        const { remove, replace, selectedPaths, selectedNodes, path } =
+            SNAC.wrapNodes(
+                newNS,
+                newName,
+                this.state.root,
+                this.state.selectedPaths,
+                this.state.selectedNodes
+            )
         this.save(remove, replace)
-        
         this.setEditor({
             root: this.state.root,
             editor: Editors.XML_DISPLAY,

@@ -1,10 +1,5 @@
-import { findTags, findIDs } from './find'
+import { findTags, findIDs, firstPath, lastPath,  currPathItem, prevPathItem, nextPathItem } from './find'
 import { clone } from './clone'
-
-import {
-    pathParent, pathDecrement, pathIncrement, firstPath, lastPath, lastChildIndex,
-    parentLastChildIndex, currPathItem, prevPathItem, nextPathItem
-} from './path'
 
 export const setSelected = (root, _selectedPaths = [], path) => {
 

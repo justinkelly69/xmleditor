@@ -1,49 +1,7 @@
 import { v4 } from 'uuid'
 import { itemType, has } from './helpers'
-
-export const newElement = (snac) => {
-    const A = has(snac, 'A', {})
-    const C = has(snac, 'C', [])
-    return cloneElement({
-        S: snac.S === '@' ? '' : snac.S,
-        N: snac.N,
-        A: cloneAttributes(A),
-        C: cloneChildren(C, { newID: true }),
-        a: true,
-        o: true,
-        q: false
-    }, { newID: true })
-}
-
-export const newText = (txt = '') =>
-    cloneText({
-        T: txt,
-        q: false,
-    }, { newID: true })
-
-export const newCDATA = (cdata = '') =>
-    cloneCDATA({
-        D: cdata,
-        q: false
-    }, { newID: true })
-
-export const newComment = (comment = '') =>
-    cloneComment({
-        M: comment,
-        q: false,
-    }, { newID: true })
-
-export const newPI = (lang = '', body = '') =>
-    clonePI({
-        L: lang,
-        B: body,
-        q: false,
-    }, { newID: true })
-
-export const newIPoint = () => ({
-    _: `I${v4()}`,
-    q: false,
-})
+import { NSNameTest } from './regex'
+import { saveAttributes} from './attributes'
 
 export const clone = (snac, settings = {}, newID = false) => {
     const type = itemType(snac)
@@ -146,3 +104,61 @@ export const clonePI = (snac, settings = {}) => {
         q: clearSelected ? false : toggleSelected.includes(snac._)
     })
 }
+
+export const saveNode = (data, newNS, newName, atts) => {
+    let [remove, replace] = [[], []]
+    if (NSNameTest(newNS, newName)) {
+        remove = [data._]
+        replace = [{
+            ...data,
+            S: newNS,
+            N: newName,
+            A: saveAttributes(atts)
+        }]
+    }
+    return { remove, replace }
+}
+
+export const newElement = (snac) => {
+    const A = has(snac, 'A', {})
+    const C = has(snac, 'C', [])
+    return cloneElement({
+        S: snac.S === '@' ? '' : snac.S,
+        N: snac.N,
+        A: cloneAttributes(A),
+        C: cloneChildren(C, { newID: true }),
+        a: true,
+        o: true,
+        q: false
+    }, { newID: true })
+}
+
+export const newText = (txt = '') =>
+    cloneText({
+        T: txt,
+        q: false,
+    }, { newID: true })
+
+export const newCDATA = (cdata = '') =>
+    cloneCDATA({
+        D: cdata,
+        q: false
+    }, { newID: true })
+
+export const newComment = (comment = '') =>
+    cloneComment({
+        M: comment,
+        q: false,
+    }, { newID: true })
+
+export const newPI = (lang = '', body = '') =>
+    clonePI({
+        L: lang,
+        B: body,
+        q: false,
+    }, { newID: true })
+
+export const newIPoint = () => ({
+    _: `I${v4()}`,
+    q: false,
+})

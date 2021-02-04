@@ -1,7 +1,6 @@
 import { newElement, newText, clone, cloneChildren } from './clone'
 import { itemType, unEscapeXML } from './helpers'
-import { find, findIDs } from './find'
-import { pathIncrement, firstPath, lastPath } from './path'
+import { find, findIDs, pathIncrement, firstPath, lastPath  } from './find'
 import { NSNameTest } from './regex'
 import { getOuterElements } from './selector'
 import { concatTextNodes } from './texts'

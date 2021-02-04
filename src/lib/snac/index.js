@@ -1,6 +1,5 @@
 import { xml2snac } from './lib/xml2snac'
-import { clone } from './lib/clone'
-import { saveNode } from './lib/save'
+import { clone, saveNode } from './lib/clone'
 import { snac2xml } from './lib/snac2xml'
 
 import {
@@ -47,14 +46,11 @@ import {
     findID,
     findPrevID,
     findNextID,
-    findParentID
-} from './lib/find'
-
-import {
+    findParentID,
     pathParent,
     pathDecrement,
     pathIncrement
-} from './lib/path'
+} from './lib/find'
 
 import {
     insertNode,
