@@ -30,19 +30,14 @@ const TextEditor = props => {
         <Panels.Panel>
             <Panels.PanelHeader>
                 {mode === 'T' ? (
-
                     <TextHeader
-                        data={props.data}
                         text={text}
                         setMode={setMode}
-                        saveText={props.saveText}
-                        clearEditor={props.clearEditor} />
-
-
+                        {...props}
+                    />
                 ) : mode === 'N' ? (
                     <NodeHeader
                         canEdit={false}
-                        data={props.data}
                         setNewNS={setNewNS}
                         setNewName={setNewName}
                         newNS={newNS}
@@ -50,67 +45,48 @@ const TextEditor = props => {
                         textBefore={textBefore}
                         textInside={textInside}
                         textAfter={textAfter}
-                        pasteEnable={props.pasteEnable}
-                        pasteNodes={props.pasteNodes}
-                        clearEditor={props.clearEditor}
-                        insertNode={props.insertNode}
                         setMode={setMode}
+                        {...props}
                     />
-
                 ) : mode === 'D' ? (
                     <CDATAHeader
                         canEdit={false}
-                        path={props.path}
-                        root={props.root}
-                        data={props.data}
-                        clearEditor={props.clearEditor}
-                        insertCDATA={props.insertCDATA}
                         setMode={setMode}
                         textBefore={textBefore}
                         textInside={textInside}
-                        textAfter={textAfter} />
-
-
+                        textAfter={textAfter}
+                        {...props}
+                    />
                 ) : mode === 'M' ? (
                     <CommentHeader
                         canEdit={false}
-                        path={props.path}
-                        root={props.root}
-                        data={props.data}
-                        clearEditor={props.clearEditor}
-                        insertComment={props.insertComment}
                         setMode={setMode}
                         textBefore={textBefore}
                         textInside={textInside}
-                        textAfter={textAfter} />
-
+                        textAfter={textAfter}
+                        {...props}
+                    />
                 ) : mode === 'P' ? (
                     <PIHeader
                         canEdit={false}
-                        path={props.path}
-                        root={props.root}
-                        data={props.data}
-                        clearEditor={props.clearEditor}
-                        insertPI={props.insertPI}
                         setLang={setLang}
                         setMode={setMode}
                         lang={lang}
                         textBefore={textBefore}
                         textInside={textInside}
-                        textAfter={textAfter} />
-
+                        textAfter={textAfter}
+                        {...props}
+                    />
                 ) : null
                 }
             </Panels.PanelHeader>
-
             <Panels.PanelBody>
-
                 <TextAreas.TextInput
                     value={text}
                     readOnly={mode !== 'T'}
                     onChange={(event) => saveEdit(event.target)}
-                    onSelect={(event) => saveSelect(event.target)} />
-
+                    onSelect={(event) => saveSelect(event.target)}
+                />
             </Panels.PanelBody>
         </Panels.Panel>
     )

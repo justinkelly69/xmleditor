@@ -8,43 +8,20 @@ const Attribute = (props) => {
                 <Panels.NewLine />
             }
             <Prefix
-                path={props.path}
-                data={props.data}
-                prefix={props.prefix}
-                spacing={props.spacing}
-                prefixArray={props.prefixArray}
                 active={false}
-                prefixEnabled={props.prefixEnabled}
                 twoLines={false}
-                setEditor={props.setEditor}
-                writeable={props.writeable} />
-
+                {...props} />
             {!props.prefixEnabled ?
                 Symbols.AttributePrefixOff :
                 props.prefixArray.length > 1 ?
                     Symbols.AttributePrefixOn :
                     Symbols.AttributePrefixOff
             }
-
-            <AttributeNSName
-                data={props.data}
-                ns={props.ns}
-                name={props.name}
-                path={props.path}
-                setPath={props.setPath} />
-
+            <AttributeNSName {...props} />
             <Brackets.AttributeEquals />
-
             <Brackets.AttributeQuote />
-            <AttributeValue
-                writeable={props.writeable}
-                data={props.data}
-                ns={props.ns}
-                name={props.name}
-                path={props.path}
-                setPath={props.setPath} />
+            <AttributeValue {...props} />
             <Brackets.AttributeQuote />
-
         </Fields.TextBody>
     )
 }

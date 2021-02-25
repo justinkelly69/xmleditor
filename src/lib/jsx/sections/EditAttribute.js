@@ -13,7 +13,6 @@ const EditAttribute = (props) =>
                 {SNAC.getNS(props.ns)}
             </Fields.AttributeNS>
         </Panels.EditAttributeItem>
-
         <Panels.EditAttributeItem oddEven={props.oddEven}>
             <Fields.AttributeName onClick={() => !props.isDeleted ?
                 props.attributesOpenClose(props.atts, props.ns, props.name) :
@@ -23,7 +22,6 @@ const EditAttribute = (props) =>
                 {props.name}
             </Fields.AttributeName>
         </Panels.EditAttributeItem>
-
         <Panels.EditAttributeItem oddEven={props.oddEven}>
             {props.isOpen && !props.newAttr && !props.isDeleted ?
 
@@ -45,7 +43,6 @@ const EditAttribute = (props) =>
                 </Fields.AttributeValue>
             }
         </Panels.EditAttributeItem>
-
         <Panels.EditAttributeItem oddEven={props.oddEven}>
             {props.newAttr || props.open  ?
                 null :

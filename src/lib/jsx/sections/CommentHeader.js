@@ -2,17 +2,13 @@ import React from 'react'
 import { Buttons, Labels, Brackets, Panels, Fields, Symbols } from '..'
 
 const CommentHeader = props =>
-
     <Panels.PanelHeader>
-
         <Panels.PanelItem>
             <Brackets.CommentOpenBracket />
             <Fields.CommentBody>{Symbols.CommentLabel}</Fields.CommentBody>
             <Brackets.CommentCloseBracket />
         </Panels.PanelItem>
-
         <Panels.PanelSpacing />
-
         {props.canEdit && props.path && props.path.length > 1 ?
             <>
                 <Panels.PanelItemRight>
@@ -23,13 +19,11 @@ const CommentHeader = props =>
                         {Labels.UnwrapComment}
                     </Buttons.StandardButton>
                 </Panels.PanelItemRight>
-
                 <Panels.PanelItemRight>
                     <Buttons.CommentButton onClick={() => props.saveComment(props.data, props.comment)}>
                         {Labels.SaveComment}
                     </Buttons.CommentButton>
                 </Panels.PanelItemRight>
-
                 <Panels.PanelItemRight>
                     <Buttons.StandardButton onClick={() =>  props.clearEditor() }>
                         {Labels.CancelComment}
@@ -57,7 +51,6 @@ const CommentHeader = props =>
                 </Panels.PanelItemRight>
             </>
         }
-
     </Panels.PanelHeader>
 
 export default CommentHeader

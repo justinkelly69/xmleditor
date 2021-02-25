@@ -2,19 +2,15 @@ import React from 'react'
 import { Buttons, Labels, Brackets, Panels, PanelButtonsRight, TextInputs, Fields } from '..'
 
 const PIHeader = props =>
-
     <Panels.PanelHeader>
-
         <Panels.PanelItem flexGrow="1" marginRight={PanelButtonsRight.marginRight}>
             <Brackets.PIOpenBracket />
             <Fields.PILang>{Labels.PIHeading}</Fields.PILang>
             <Brackets.PICloseBracket />
         </Panels.PanelItem>
-
         <Panels.PanelItem flexGrow="2" >
             <TextInputs.PILangInput value={props.lang} onChange={(event) => props.setLang(event.target.value)} />
         </Panels.PanelItem>
-
         <Panels.PanelSpacing />
         {props.canEdit && props.path && props.path.length > 1 ?
             <>
@@ -26,13 +22,11 @@ const PIHeader = props =>
                         {Labels.UnwrapPI}
                     </Buttons.StandardButton>
                 </Panels.PanelItemRight>
-
                 <Panels.PanelItemRight>
                     <Buttons.PIButton onClick={() => props.savePI(props.data, props.lang, props.body)}>
                         {Labels.SavePI}
                     </Buttons.PIButton>
                 </Panels.PanelItemRight>
-
                 <Panels.PanelItemRight>
                     <Buttons.StandardButton onClick={() => props.clearEditor()}>
                         {Labels.CancelPI}
@@ -53,7 +47,6 @@ const PIHeader = props =>
                         {Labels.InsertPI}
                     </Buttons.PIButton>
                 </Panels.PanelItemRight>
-
                 <Panels.PanelItemRight>
                     <Buttons.StandardButton onClick={() => props.setMode('T')}>
                         {Labels.CancelPI}

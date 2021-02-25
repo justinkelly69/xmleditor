@@ -2,7 +2,6 @@ import React from 'react'
 import { Buttons, Labels, Panels, Constants, NSNameTextInputs } from '..'
 
 const XMLHeader = props =>
-
     <Panels.PanelHeader>
         {props.mode === Constants.NO_SELECTION ? (
             <>
@@ -14,7 +13,6 @@ const XMLHeader = props =>
                         {Labels.CutXML}
                     </Buttons.StandardButton>
                 </Panels.PanelItem>
-
                 <Panels.PanelItem>
                     <Buttons.StandardButton onClick={() => {
                         props.copyNodes()
@@ -23,7 +21,6 @@ const XMLHeader = props =>
                         {Labels.CopyXML}
                     </Buttons.StandardButton>
                 </Panels.PanelItem>
-
                 <Panels.PanelItem>
                     <Buttons.StandardButton onClick={() =>
                         props.setMode(Constants.WRAP)
@@ -31,7 +28,6 @@ const XMLHeader = props =>
                         {Labels.WrapXML}
                     </Buttons.StandardButton>
                 </Panels.PanelItem>
-
                 <Panels.PanelItem>
                     <Buttons.StandardButton onClick={() => {
                         props.deleteNodes()
@@ -40,7 +36,6 @@ const XMLHeader = props =>
                         {Labels.DeleteXML}
                     </Buttons.StandardButton>
                 </Panels.PanelItem>
-
                 <Panels.PanelItem>
                     <Buttons.StandardButton onClick={() => {
                         props.clearSelected(f => f)
@@ -58,7 +53,6 @@ const XMLHeader = props =>
                         setNewName={props.setNewName}
                     />
                 </Panels.PanelItem>
-
                 <Panels.PanelItem>
                     <Buttons.StandardButton onClick={() => {
                         props.wrapNodes(props.newNS, props.newName)

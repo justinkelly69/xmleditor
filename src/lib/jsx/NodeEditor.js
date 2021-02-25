@@ -3,7 +3,6 @@ import * as SNAC from '../snac'
 import { EditAttributes, NewAttribute, NodeHeader, Panels } from '.'
 
 export const NodeEditor = props => {
-
     const [newNS, setNewNS] = useState(props.data.S === null ? "" : props.data.S)
     const [newName, setNewName] = useState(props.data.N)
     const [newAttNS, setNewAttNS] = useState("")
@@ -11,7 +10,6 @@ export const NodeEditor = props => {
     const [newAttValue, setNewAttValue] = useState("")
     const [newAttr, setNewAttr] = useState(false)
     const [atts, setAtts] = useState(SNAC.loadAttributes(props.data.A))
-
 
     // Open/Close attribute text fields.
     const attributesOpenClose = (atts, idx1, idx2) => {
@@ -52,41 +50,31 @@ export const NodeEditor = props => {
 
     return (
         <Panels.Panel>
-
             <NodeHeader
                 canEdit={true}
-                root={props.root}
-                data={props.data}
-                path={props.path}
-                newAttr={newAttr}
                 isOpen={SNAC.attsOpen(atts)}
                 setNewNS={setNewNS}
                 setNewName={setNewName}
                 newNS={newNS}
                 newName={newName}
                 atts={atts}
-                unwrapNode={props.unwrapNode}
-                clearEditor={props.clearEditor}
-                saveNode={props.saveNode}
+                newAttr={newAttr}
                 closeAll={closeAll}
+                {...props}
             />
-
             <Panels.PanelBody>
-
                 <EditAttributes
                     atts={atts}
+                    ns={newAttNS}
+                    name={newAttName}
                     newAttr={newAttr}
-                    data={props.data}
                     isOpen={SNAC.attsOpen(atts)}
                     attributesOpenClose={attributesOpenClose}
-                    saveNode={props.saveNode}
                     closeAll={closeAll}
                     updateAttributeValue={updateAttributeValue}
                     markAttributeDeleted={markAttributeDeleted}
-                    ns={newAttNS}
-                    name={newAttName}
+                    {...props}
                 />
-
                 <NewAttribute
                     atts={atts}
                     isOpen={SNAC.attsOpen(atts)}
@@ -98,10 +86,9 @@ export const NodeEditor = props => {
                     newAttr={newAttr}
                     ns={newAttNS}
                     name={newAttName}
-                    value={newAttValue} />
-
+                    value={newAttValue}
+                />
             </Panels.PanelBody>
-
         </Panels.Panel>
     )
 }

@@ -4,13 +4,15 @@ import * as SNAC from '../../snac'
 
 const EditAttributes = props => {
     let onOff = true;
+    
     return (
         <Panels.EditAttributes>
             {Object.keys(props.atts).sort().map(ns => {
                 return (Object.keys(props.atts[ns]).sort().map(a => {
                     onOff = !onOff
                     return (
-                        <EditAttribute key={`${ns}-${a}`}
+                        <EditAttribute
+                            key={`${ns}-${a}`}
                             oddEven={onOff}
                             open={props.isOpen}
                             data={props.data}
@@ -27,7 +29,8 @@ const EditAttributes = props => {
                             updateAttributeValue={props.updateAttributeValue}
                             markAttributeDeleted={props.markAttributeDeleted}
                             ns={ns}
-                            name={a} />
+                            name={a}
+                        />
                     )
                 }))
             })}

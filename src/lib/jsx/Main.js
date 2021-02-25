@@ -50,84 +50,44 @@ class Main extends Component {
     }
 
     setEditor(props) {
-        if (this.state.data && props.data && props.data._ === this.state.data._) {
-            this.clearEditor()
-        }
-        else {
-            if (props.data) {
-                switch (props.editor) {
+        this.state.data && props.data && props.data._ === this.state.data._ ?
+            this.clearEditor() :
+            props.data ?
+                this.isEditor(props.editor) ?
+                    this.clearSelected(() => {
+                        this.setState(() => ({
+                            data: SNAC.clone(props.data),
+                            editor: props.editor,
+                            path: props.path,
+                        }))
+                    }) :
+                    (this.isDisplay(props.editor)) &&
+                        props.selectedNodes.length === 0 ?
+                        this.clearEditor() :
+                        this.setState(() => ({
+                            root: props.root,
+                            editor: Editors.XML_DISPLAY,
+                            path: props.path,
+                            prefix: props.prefix,
+                            selectedPaths: props.selectedPaths,
+                            selectedNodes: props.selectedNodes,
+                        })) :
+                this.clearEditor()
 
-                    case Editors.NODE_EDITOR:
-                        this.clearSelected(() => {
-                            this.setState(() => ({
-                                data: SNAC.clone(props.data),
-                                editor: Editors.NODE_EDITOR,
-                                path: props.path
-                            }))
-                        })
-                        break
+    }
 
-                    case Editors.TEXT_EDITOR:
-                        this.clearSelected(() => {
-                            this.setState(() => ({
-                                data: SNAC.clone(props.data, []),
-                                editor: Editors.TEXT_EDITOR,
-                                path: props.path
-                            }))
-                        })
-                        break
+    isEditor(e) {
+        return (
+            e === Editors.NODE_EDITOR ||
+            e === Editors.TEXT_EDITOR ||
+            e === Editors.CDATA_EDITOR ||
+            e === Editors.COMMENT_EDITOR ||
+            e === Editors.PI_EDITOR
+        )
+    }
 
-                    case Editors.COMMENT_EDITOR:
-                        this.clearSelected(() => {
-                            this.setState(() => ({
-                                data: SNAC.clone(props.data, []),
-                                editor: Editors.COMMENT_EDITOR,
-                                path: props.path
-                            }))
-                        })
-                        break
-
-                    case Editors.CDATA_EDITOR:
-                        this.clearSelected(() => {
-                            this.setState(() => ({
-                                data: SNAC.clone(props.data, []),
-                                editor: Editors.CDATA_EDITOR,
-                                path: props.path
-                            }))
-                        })
-                        break
-
-                    case Editors.PI_EDITOR:
-                        this.clearSelected(() => {
-                            this.setState(() => ({
-                                data: SNAC.clone(props.data, []),
-                                editor: Editors.PI_EDITOR,
-                                path: props.path
-                            }))
-                        })
-                        break
-
-                    case Editors.XML_DISPLAY:
-                        if (props.selectedNodes.length === 0) {
-                            this.clearEditor()
-                        }
-                        else {
-                            this.setState(() => ({
-                                editor: Editors.XML_DISPLAY,
-                                prefix: props.prefix,
-                                root: props.root,
-                                path: props.path,
-                                selectedPaths: props.selectedPaths,
-                                selectedNodes: props.selectedNodes
-                            }))
-                        }
-                        break
-
-                    default:
-                        this.clearEditor()
-                }
-            }
-        }
+    isDisplay(e) {
+        return e === Editors.XML_DISPLAY
     }
 
     clearEditor() {

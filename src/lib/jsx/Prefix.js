@@ -22,15 +22,7 @@ const Prefix = props =>
                         <Panels.NewLine />
                     </>
                 }
-                <PrefixButton
-                    path={props.path}
-                    data={props.data}
-                    prefix={props.prefix}
-                    openTag={props.openTag}
-                    writeable={props.writeable}
-                    setEditor={props.setEditor}
-                    setSelected={props.setSelected}
-                />
+                <PrefixButton {...props} />
                 <Panels.Prefix>
                     {SNAC.getPrefixString(
                         props.prefixArray,

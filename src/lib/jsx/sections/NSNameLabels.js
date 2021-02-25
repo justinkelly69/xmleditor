@@ -20,7 +20,6 @@ const NSNameLabels = props =>
             </> :
             null
         }
-
         <Fields.Name onClick={() => {
             props.writeable && props.setEditor({
                 data: props.data,

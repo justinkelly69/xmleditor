@@ -7,26 +7,19 @@ const PIEditor = props => {
 
     return (
         <Panels.Panel>
-
             <PIHeader
                 canEdit={true}
-                path={props.path}
-                root={props.root}
-                data={props.data}
                 lang={lang}
                 body={body}
                 setLang={setLang}
-                unwrapNode={props.unwrapNode}
-                clearEditor={props.clearEditor}
-                savePI={props.savePI} />
-
+                {...props}
+            />
             <Panels.PanelBody>
                 <TextAreas.PIBodyInput
                     onChange={(event) => setBody(event.target.value)}
                     value={body}
                 />
             </Panels.PanelBody>
-
         </Panels.Panel>
     )
 }

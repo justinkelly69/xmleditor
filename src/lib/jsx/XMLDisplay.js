@@ -17,32 +17,19 @@ const XMLDisplay = props => {
                     setNewNS={setNewNS}
                     newName={newName}
                     setNewName={setNewName}
-                    cutNodes={props.cutNodes}
-                    copyNodes={props.copyNodes}
-                    deleteNodes={props.deleteNodes}
-                    wrapNodes={props.wrapNodes}
-                    clearEditor={props.clearEditor}
-                    clearSelected={props.clearSelected}
+                    {...props}
                 />
             ) : null
             }
             <>
                 <ChildElements
-                    elements={props.selectedNodes}
-                    data={props.data}
-                    root={props.root}
                     path={[]}
-                    prefix={props.prefix}
                     spacing={spacing}
-                    clipboard={props.clipboard}
-                    setEditor={props.setEditor}
-                    clearEditor={props.clearEditor}
-                    setSelected={props.setSelected}
+                    elements={props.selectedNodes}
                     prefixEnabled={false}
-                    setPath={props.setPath}
-                    writeable={props.writeable}
-                    showSwitches={props.showSwitches}
-                    showClosingTag={true} />
+                    showClosingTag={true}
+                    {...props}
+                />
             </>
         </>
     )

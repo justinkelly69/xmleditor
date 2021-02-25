@@ -2,7 +2,6 @@ import React from 'react'
 import { Buttons, Labels, Panels, NSNameTextInputs } from '..'
 
 const NodeHeader = props =>
-
     <Panels.PanelHeader>
         <Panels.PanelItem>
             <NSNameTextInputs
@@ -12,9 +11,7 @@ const NodeHeader = props =>
                 newName={props.newName}
             />
         </Panels.PanelItem>
-
         <Panels.PanelSpacing />
-
         {props.canEdit ?
             <>
                 {!props.newAttr &&
@@ -29,7 +26,6 @@ const NodeHeader = props =>
                                 </Buttons.StandardButton>
                             }
                         </Panels.PanelItemRight>
-
                         <Panels.PanelItemRight>
                             <Buttons.StandardButton onClick={() => {
                                 props.saveNode(
@@ -43,13 +39,11 @@ const NodeHeader = props =>
                                 {Labels.SaveElement}
                             </Buttons.StandardButton>
                         </Panels.PanelItemRight>
-
                         <Panels.PanelItemRight>
                             <Buttons.StandardButton onClick={() => props.clearEditor()}>
                                 {Labels.CancelElement}
                             </Buttons.StandardButton>
                         </Panels.PanelItemRight>
-
                     </>
                 }
             </> :
@@ -67,7 +61,6 @@ const NodeHeader = props =>
                         </Buttons.StandardButton>
                     }
                 </Panels.PanelItemRight>
-
                 <Panels.PanelItemRight>
                     <Buttons.StandardButton onClick={() => {
                         props.insertNode(props.data, {
@@ -81,7 +74,6 @@ const NodeHeader = props =>
                         {Labels.InsertNodeText}
                     </Buttons.StandardButton>
                 </Panels.PanelItemRight>
-
                 <Panels.PanelItemRight>
                     <Buttons.StandardButton onClick={() => props.setMode('T')}>
                         {Labels.CancelNodeText}
