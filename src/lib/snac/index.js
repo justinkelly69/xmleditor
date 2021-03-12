@@ -35,7 +35,7 @@ import {
     getNS,
     getNamespaces,
     getNames,
-    hasAttributes
+    hasAttributes,
 } from './lib/helpers'
 
 import {

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Buttons, Labels, Panels } from '..'
+import { Buttons, Checkboxes, Labels, Panels } from '..'
 
 const TextHeader = props =>
     <Panels.PanelHeader>
@@ -23,6 +23,12 @@ const TextHeader = props =>
                 {Labels.NewPIMode}
             </Buttons.PIButton>
         </Panels.PanelItemRight>
+        <Panels.PanelItemRight>
+            <Checkboxes.NormalizeCheckbox
+                onChange={(event) => props.normalizeText(event.target)}
+            />
+        </Panels.PanelItemRight>
+
         <Panels.PanelSpacing />
         <Panels.PanelItemRight>
             <Buttons.StandardButton onClick={() => props.saveText(props.data, props.text)}>
@@ -36,4 +42,4 @@ const TextHeader = props =>
         </Panels.PanelItemRight>
     </Panels.PanelHeader>
 
-    export default TextHeader
+export default TextHeader

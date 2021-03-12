@@ -51,7 +51,7 @@ import PIHeader from './sections/PIHeader'
 import XMLHeader from './sections/XMLHeader'
 import EditAttributes from './sections/EditAttributes'
 
-import { ButtonStyles, Colors, Constants, Editors, Sizes, Settings, Styles, Symbols, Labels, PanelButtonsRight } from './helpers/constants'
+import { ButtonStyles, CheckboxStyles, Colors, Constants, Editors, Sizes, Settings, Styles, Symbols, Labels, PanelButtonsRight } from './helpers/constants'
 
 import * as Fields from './widgets/Fields'
 import Brackets from './widgets/Brackets'
@@ -60,6 +60,7 @@ import * as TextAreas from './widgets/TextAreas'
 import { TextInput } from './widgets/TextInputs'
 import * as TextInputs from './widgets/TextInputs'
 import { Button } from './widgets/Buttons'
+import * as Checkboxes from './widgets/Checkboxes'
 import * as Buttons from './widgets/Buttons'
 import * as Links from './widgets/Links'
 import * as Sections from './widgets/Sections'
@@ -74,5 +75,6 @@ export {
     Brackets,  TextAreas, TextInput, TextView, ChildElement, ChildElements,
     Constants, Editors, Sizes, Settings, DropDownList, WriteableButtons, Links,
     Fields, Symbols, Colors, Labels, TextInputs, Styles, Sections, Panels, ButtonStyles, PanelButtonsRight,
-    NodeHeader, TextHeader, CDATAHeader, CommentHeader, PIHeader, XMLHeader, AttributeValue, TextViews
+    NodeHeader, TextHeader, CDATAHeader, CommentHeader, PIHeader, XMLHeader, AttributeValue, TextViews,
+    CheckboxStyles, Checkboxes
 }

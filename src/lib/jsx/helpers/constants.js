@@ -60,6 +60,11 @@ export const PanelButtonsRight = {
     marginRight: '.4em',
 }
 
+export const CheckboxStyles = {
+    height: '1em',
+    width: '1em',
+}
+
 export const Styles = {
     TextInputBorderWidth: '1px',
     TextInputBorderRadius: '4px',
