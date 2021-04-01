@@ -24,11 +24,9 @@ const TextHeader = props =>
             </Buttons.PIButton>
         </Panels.PanelItemRight>
         <Panels.PanelItemRight>
-            <Checkboxes.NormalizeCheckbox
-                onChange={(event) => props.normalizeText(event.target)}
-            />
+            <Checkboxes.NormalizeCheckbox onChange={(event) => props.normalizeText(event.target)} 
+            name="normalize" label="Normalize"/>
         </Panels.PanelItemRight>
-
         <Panels.PanelSpacing />
         <Panels.PanelItemRight>
             <Buttons.StandardButton onClick={() => props.saveText(props.data, props.text)}>
