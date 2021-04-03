@@ -213,5 +213,5 @@ export const Constants = {
 
 export const Settings = {
     SHOW_CLOSING_TAG : false,
-    PREFIX_TWO_LINES : true,
+    PREFIX_TWO_LINES : false,
 }
