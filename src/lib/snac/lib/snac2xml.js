@@ -6,9 +6,8 @@ export const snac2xml = snac => element2xml(snac, 0)
 const element2xml = (snac, depth, prefix = "\t") => {
     const prefix1 = makeSpacing(depth, prefix)
     const prefix2 = makeSpacing(depth + 1, prefix)
-    let nodeName = snac.S ?
-        `${snac.S}:${snac.N}` :
-        snac.N
+    const nodeName = snac.S ? `${snac.S}:${snac.N}` : snac.N
+
     let xml = `${prefix1}<${nodeName} ${atts2xml(snac.A, depth, prefix)}>\n`
     snac.C.forEach((c, i) => {
         switch (itemType(c)) {
