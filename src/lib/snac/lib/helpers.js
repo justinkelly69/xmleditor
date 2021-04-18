@@ -19,15 +19,32 @@ export const itemType = item =>
 * @param {integer} key Key to find
 * @param {integer} alt Return this if key not found
 */
-export const has = (arr, key, alt) =>
-    arr.hasOwnProperty(key) ? arr[key] : alt
+export const has = (arr, key, alt) => arr.hasOwnProperty(key) ? arr[key] : alt
 
+/**
+ * @param {object} A is a set of attributes.
+ * Return the attribute names.
+ */
 export const getNamespaces = A => Object.keys(A)
 
+/**
+ * @param {object} A is a set of attributes.
+ * @param {string} ns is a namespace within the attributes
+ * Return the attribute names in the namespace ns
+ */
 export const getNames = (A, ns) => Object.keys(A[ns])
 
+/**
+ * @param {string} ns is a namespace name
+ * If ns is '@', return an empty string
+ * Otherwise return ns
+ */
 export const getNS = ns => ns === '@' ? '' : ns
 
+/**
+ * @param {object} A is a set of attributes.
+ * Return true id A is not empty.
+ */
 export const hasAttributes = A => {
     let result = false
     Object.keys(A).forEach(ns => {
@@ -71,7 +88,9 @@ export const unEscapeXML = str =>
 export const escapeCDATA = str => _escape(str, [["]]>", "]]&gt;"]])
 
 /**
- * Escape --> as --&lt; in a Comment string.
+ * Escape '--' as '- - ' in a Comment string.
+ * If the first character is '-', replace it with '- '.
+ * If the last character is '-', replace it with ' -'/
  * @param {String} str 
  */
 export const escapeComment = str => _escape(str, [
